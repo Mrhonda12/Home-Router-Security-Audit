@@ -1,0 +1,6 @@
+mkdir -p scans
+
+sudo nmap -T4 192.168.1.1 -oN scans/nmap_top_ports.txt
+sudo nmap -sV -sC 192.168.1.1 -oN scans/nmap_services_scripts.txt
+sudo nmap --script vuln 192.168.1.1 -oN scans/nmap_vuln_scripts.txt
+sudo nmap -sV -sC -O 192.168.1.1 -oN scans/nmap_os_detect.txt
