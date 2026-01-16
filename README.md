@@ -41,14 +41,19 @@ sudo nmap --script vuln 192.168.1.1
 ### OS Detection
 sudo nmap -sV -sC -O 192.168.1.1
 
-Open Ports Detected
-Port	  State	  Service	   Details
-53/tcp	open	  DNS	     Cloudflare public DNS detected
-80/tcp	open	  HTTP	   lighttpd 1.4.59
-443/tcp	open	  HTTPS	   lighttpd 1.4.59 (TLS/SSL enabled)
-Other ports:
-846 closed (reset)
-151 filtered (no-response)
+## Key Results
+
+### Open Ports Detected
+| Port | State | Service | Details |
+|------|-------|---------|---------|
+| 53/tcp | open | DNS | Cloudflare public DNS detected |
+| 80/tcp | open | HTTP | lighttpd 1.4.59 |
+| 443/tcp | open | HTTPS | lighttpd 1.4.59 (TLS/SSL enabled) |
+
+**Other ports**
+- 846 closed (reset)
+- 151 filtered (no-response)
+
 ### Findings
 1) HTTP Admin Interface Exposed on Port 80
 
@@ -100,3 +105,10 @@ nmap_os_detect.txt
 ### Disclaimer
 
 ### This project was performed only on devices I own/operate and only within my local network following ethical cybersecurity practices.
+
+## What I Learned
+- How to map devices on a LAN using ARP discovery
+- How to enumerate services and identify web servers using Nmap
+- How to use safe NSE scripts for vulnerability checks
+- How to document findings and provide actionable mitigations
+
